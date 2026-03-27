@@ -1,0 +1,85 @@
+:root {
+
+  /* Colors */    
+  --navy-blue-100: #222831;
+  --navy-blue-80: rgba(34, 40, 49, 0.8);
+  --color-white-100: #FFFFFF;
+  --color-black-100: #000000;
+  --color-skyblue-90: #88EBEF;
+  --color-light-navy-blue-100: #272E37;
+  --color-light-blue-gradient: #6B9FBF;
+  --color-cyan-accent: #5AC8C8;
+  --color-gray-text: #9CA3AF;
+  --color-dark-teal: #4A7C7E;
+  
+  /* Design */
+  --app-background-color: var(--navy-blue-100);
+  --panel-background-color: var(--color-light-navy-blue-100);
+  --day-panel-background: linear-gradient(135deg, #6B9FBF 0%, #4A7C7E 100%);
+  --card-background-color: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --primary-text-color: var(--color-white-100);
+  --secondary-text-color: var(--color-gray-text);
+  --accent-text-color: var(--color-cyan-accent);
+
+  /* Font Sizes */
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-26: 26px;
+  --font-size-30: 30px;
+  --font-size-36: 36px;
+  --font-size-40: 40px;
+  --font-size-50: 50px;
+  --font-size-64: 64px;
+
+  /* Font Families */
+  --font-family-montserrat: 'Montserrat', sans-serif;
+  --heading-font-primary: var(--font-family-montserrat);
+
+  /* Text Styles */
+  --regular-text: var(--font-size-24);
+
+  /* Heading Sizes */
+  --heading-sm: var(--font-size-14);
+  --heading-md: var(--font-size-20);
+  --heading-lg: var(--font-size-24);
+  --heading-xl: var(--font-size-36);
+  --heading-xxl: var(--font-size-64);
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Border Radius */
+  --border-radius-10: 10px;
+  --border-radius-20: 20px;
+  --border-radius-24: 24px;
+  --border-radius-30: 30px;
+
+  --border-round-day-panel: var(--border-radius-30);
+  --border-round-day-forecast-panel: var(--border-radius-24);
+  --border-radius-day: var(--border-radius-10);
+
+  /* Spacing */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+
+  /* Box Shadow */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+}

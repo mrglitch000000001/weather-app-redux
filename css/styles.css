@@ -1,0 +1,382 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-montserrat);
+  font-size: var(--regular-text);
+  background-color: var(--app-background-color);
+  color: var(--primary-text-color);
+  padding: var(--spacing-40);
+  min-height: 100vh;
+}
+
+header {
+  margin-bottom: var(--spacing-32);
+}
+
+header h1 {
+  font-size: var(--heading-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--secondary-text-color);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-32);
+}
+
+.panel {
+  border-radius: var(--border-radius-day);
+  background-color: var(--panel-background-color);
+  padding: var(--spacing-32);
+}
+
+.day-panel {
+  background: 
+    linear-gradient(135deg, rgba(107, 159, 191, 0.75) 0%, rgba(74, 124, 126, 0.75) 100%),
+    url('../images/imageoflocation.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: var(--border-round-day-panel);
+  padding: var(--spacing-32);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.day-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.day-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.day-panel-header {
+  margin-bottom: var(--spacing-20);
+}
+
+.day-panel-title {
+  font-size: var(--heading-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-text-color);
+  margin-bottom: var(--spacing-8);
+}
+
+.day-panel-date {
+  font-size: var(--heading-sm);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-12);
+}
+
+.day-panel-location {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-16);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.temperature-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-32);
+  margin: var(--spacing-32) 0;
+}
+
+.weather-icon {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 3s linear infinite;
+  font-size: 60px;
+}
+
+.weather-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.temperature-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.temperature {
+  font-size: var(--heading-xxl);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-text-color);
+  line-height: 1;
+  margin-bottom: var(--spacing-12);
+}
+
+.weather-description {
+  font-size: var(--heading-md);
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: var(--font-weight-medium);
+}
+
+.change-location-btn {
+  background-color: var(--color-cyan-accent);
+  color: var(--color-light-navy-blue-100);
+  border: none;
+  padding: var(--spacing-12) var(--spacing-20);
+  border-radius: var(--border-radius-20);
+  font-size: var(--heading-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  align-self: flex-start;
+  transition: opacity 0.3s ease;
+}
+
+.change-location-btn:hover {
+  opacity: 0.9;
+}
+
+.right-panel {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: var(--spacing-32);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-20);
+  background-color: transparent;
+  padding: 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  padding: var(--spacing-16);
+}
+
+.stat-label {
+  font-size: var(--heading-sm);
+  color: var(--secondary-text-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: var(--heading-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-text-color);
+}
+
+.hourly-forecast-section {
+  background-color: var(--panel-background-color);
+  border-radius: var(--border-radius-24);
+  padding: var(--spacing-24);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-20);
+}
+
+.section-title {
+  font-size: var(--heading-md);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  color: var(--secondary-text-color);
+}
+
+.today-badge {
+  background-color: var(--color-dark-teal);
+  color: var(--accent-text-color);
+  padding: var(--spacing-4) var(--spacing-12);
+  border-radius: var(--border-radius-20);
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-semibold);
+}
+
+.hourly-chart {
+  margin: var(--spacing-20) 0;
+  min-height: 150px;
+}
+
+.hourly-forecast-items {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: var(--spacing-12);
+  margin-top: var(--spacing-20);
+}
+
+.hourly-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-16) var(--spacing-12);
+  border-radius: var(--border-radius-20);
+  background-color: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.hourly-item.active {
+  background-color: var(--color-cyan-accent);
+  border-color: var(--color-cyan-accent);
+  box-shadow: 0 4px 12px rgba(90, 200, 200, 0.3);
+}
+
+.hourly-time {
+  font-size: var(--font-size-12);
+  color: var(--secondary-text-color);
+  margin-bottom: var(--spacing-8);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-medium);
+}
+
+.hourly-item.active .hourly-time {
+  color: var(--primary-text-color);
+}
+
+.hourly-temp {
+  font-size: var(--heading-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--primary-text-color);
+}
+
+.hourly-item.active .hourly-temp {
+  color: var(--primary-text-color);
+}
+
+.weekly-forecast-section {
+  background-color: var(--panel-background-color);
+  border-radius: var(--border-radius-24);
+  padding: var(--spacing-24);
+}
+
+.weekly-forecast-title {
+  font-size: var(--heading-md);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  color: var(--secondary-text-color);
+  margin-bottom: var(--spacing-20);
+}
+
+.weekly-forecast-items {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--spacing-16);
+}
+
+.forecast-card {
+  background-color: var(--primary-text-color);
+  border-radius: var(--border-round-day-forecast-panel);
+  padding: var(--spacing-20);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.forecast-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.forecast-card.inactive {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
+  box-shadow: none;
+}
+
+.forecast-card.inactive:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+.forecast-day {
+  font-size: var(--heading-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-light-navy-blue-100);
+}
+
+.forecast-card.inactive .forecast-day {
+  color: var(--primary-text-color);
+}
+
+.forecast-icon-svg {
+  width: 40px;
+  height: 40px;
+  color: var(--color-light-navy-blue-100);
+}
+
+.forecast-card.inactive .forecast-icon-svg {
+  color: var(--primary-text-color);
+}
+
+.forecast-icon-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.forecast-card.inactive .forecast-icon-img {
+  filter: brightness(0.8);
+}
+
+.forecast-temp {
+  font-size: var(--heading-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-light-navy-blue-100);
+}
+
+.forecast-card.inactive .forecast-temp {
+  color: var(--primary-text-color);
+}
+
+.location-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-12);
+  color: var(--primary-text-color);
+  font-size: var(--heading-md);
+}
+
+footer {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: var(--spacing-40);
+  color: var(--secondary-text-color);
+  font-size: var(--heading-sm);
+}
